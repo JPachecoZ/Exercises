@@ -1,0 +1,6 @@
+.form_container {
+    border: 1px solid black;
+    border-radius: 4%;
+    background-color: skyblue;
+    padding: 1.5rem;
+}

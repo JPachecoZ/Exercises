@@ -1,0 +1,32 @@
+.sky {
+    color: #3198D8;
+}
+
+.oraunder {
+    color:#CB4A3F;
+    text-decoration: underline;
+}
+
+.smoke {
+    color:gray;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.yellowblue {
+    background-color: beige;
+    color: blue;
+    font-style: italic;
+}
+
+.blackyellow {
+    background-color: black;
+    color: yellow;
+    font-style: italic;
+}
+
+.italic {
+    font-style: italic;
+}
