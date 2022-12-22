@@ -1,0 +1,30 @@
+*{
+    text-align: center;
+    background-color: beige;
+}
+
+.titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subtitulo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#pokemones{
+   margin-bottom: 4em;
+   border-radius: 2em;
+   padding: 1em;
+   background-color: white;
+   width: 12em;
+}
+
+#imagen{
+    width: 300px;
+}

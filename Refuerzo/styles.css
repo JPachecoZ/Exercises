@@ -1,0 +1,15 @@
+.title {
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.title--md {
+  font-size: 1.5rem;
+}
+
+.title--sm {
+  font-size: 1rem;
+}
+
+.title--sx {
+  font-size: 0.5rem;
+}

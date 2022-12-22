@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    <div style="background-color: #6FD08C; width: 100%">Hola mundo</div>
+    <script type="text/babel">
+        function Title({ size = '', children }){
+            const sizeClass = size
+            return (
+                <div className="container">
+                    <h1 className={`title--${sizeClass}`}>{children}</h1>
+                </div>
+            )
+        }
+
+        const mediumTitle = <Title size="md">Este es un Titulo Mediano</Title> 
+        const smallTitle = <Title size="sm">Este es un Titulo Pequeño</Title>
+        const extraSmallTitle = <Title size="sx">Este es un Titulo Muy Pequeño</Title>
+
+        const titles = (
+            <div>
+                {mediumTitle}
+                {smallTitle}
+                {extraSmallTitle}
+            </div>
+        )
+
+        function Profile({ name, url, size, isActive }){
+          return (
+            <div className="profile">
+              <Picture
+                name={name}
+                size={size}
+                isActive={isActive}
+                url={url}
+              />
+            </div>
+          )
+        }
+
+        const dishes = [
+            {
+              name: "tiramisu cake",
+              url: "https://t3.ftcdn.net/jpg/03/28/01/60/240_F_328016079_nUH0w4v1lB4bUrmoIdrn1S68DhlxoDCS.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 10,
+              isAvailable: true
+            },
+            {
+              name: "chia pudding", 
+              url: "https://as1.ftcdn.net/v2/jpg/01/35/36/48/1000_F_135364853_H5ixFlEMlhthu5JoVzNijwbVvsA1OiuV.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 9,
+              isAvailable: true
+            },
+            {
+              name: "cheesecake", 
+              url: "https://as2.ftcdn.net/v2/jpg/03/01/97/87/1000_F_301978781_XIKYcMAKlL7zHp5DHwMK2Jt00YPQYY9v.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 12,
+              isAvailable: false
+            },
+            {
+              name: "chocolate cake", 
+              url: "https://as2.ftcdn.net/v2/jpg/01/25/44/31/1000_F_125443129_koNQT6B86ZS72fnVg8v6GXdc1nzCtNfU.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 11,
+              isAvailable: false
+            },
+            {
+              name: "apple pie", 
+              url: "https://as1.ftcdn.net/v2/jpg/00/57/21/42/1000_F_57214243_6eNNMyucjbtCyM2x5tYLJm2AcBjEM0mI.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 10,
+              isAvailable: true
+            },
+            {
+              name: "carrot cake", 
+              url: "https://as2.ftcdn.net/v2/jpg/00/75/43/03/1000_F_75430323_PaBwezntw5lXGe3QuafQHa6k1UIuQLlg.jpg", 
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+              price: 12,
+              isAvailable: false
+            },
+          ]
+        
+        function MainPage(){
+          return (
+            <div>
+              {users.map((user) => {
+                return (
+                  <Profile 
+                    name={user.name} 
+                    url={user.url} 
+                    size={user.size} 
+                    isActive={user.isActive}/>
+                )
+              })}
+            </div>
+          )
+        }
+
+        function Picture({name, size, isActive, url}){
+          return (
+            <>
+              {isActive && <br/>}
+              <img src={url} alt={`${name}'s picture`} className={size}/>
+            </>
+          )
+        }
+
+        const root = document.querySelector("#root")
+        ReactDOM.render(<MainPage/>,root)
+    </script>
+</body>
+</html>
+
